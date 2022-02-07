@@ -25,15 +25,38 @@
 // //Any
 // let car: any = 'Bmw';
 
-let name1 = 'Juni de souza';
-function sayName(): string {
-    return name1;
+// let name1 = 'Juni de souza';
+// function sayName(): string {
+//     return name1;
+// }
+
+// console.log(sayName());
+
+// function birthday(birthYear:number, currentYear: number): number {
+//     return currentYear - birthYear;
+// }
+
+// console.log(birthday(1996,2022));
+
+// let users: {name: string, age: number} = {
+//     name: 'Jhonn',
+//     age: 27
+// }
+
+// console.log(users);
+
+let funcionario: {
+    supervisores: string[],
+    baterPonto: (horario: number) => string
+} = {
+    supervisores: ['Ana', 'Fernando'],
+    baterPonto(horario: number): string {
+        if(horario <= 8) {
+            return 'Você está no horário';
+        }else {
+            return 'Você está atrasado';
+        }
+    }
 }
 
-console.log(sayName());
-
-function birthday(birthYear:number, currentYear: number): number {
-    return currentYear - birthYear;
-}
-
-console.log(birthday(1996,2022));
+console.log(funcionario.baterPonto(9));
